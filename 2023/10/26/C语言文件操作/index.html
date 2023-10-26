@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>第一个博客  测试一下</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="C语言文件操作文件的概念先简单介绍一下文件的概念：操作系统是以文件为单位对数据进行管理的，文件一般存储在外部介质上（如磁盘磁带）  所以文件可以长期保存所属程序的数据简单应用：数据的读取、游戏的读存档  文件名文件名为了方便用户识别和应用，包括了3各部分：  文件路径（文件路径） 文件名主干（用户所取用的名字） 文件后缀（文件类型）   我们一般取文件名的时候，取的是文件名主干。文件后缀、文件路径">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一个博客  测试一下">
+<meta property="og:url" content="http://example.com/2023/10/26/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="第一个博客  测试一下">
+<meta property="og:description" content="C语言文件操作文件的概念先简单介绍一下文件的概念：操作系统是以文件为单位对数据进行管理的，文件一般存储在外部介质上（如磁盘磁带）  所以文件可以长期保存所属程序的数据简单应用：数据的读取、游戏的读存档  文件名文件名为了方便用户识别和应用，包括了3各部分：  文件路径（文件路径） 文件名主干（用户所取用的名字） 文件后缀（文件类型）   我们一般取文件名的时候，取的是文件名主干。文件后缀、文件路径">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-26T05:13:21.584Z">
+<meta property="article:modified_time" content="2023-09-26T06:36:47.898Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="第一个博客  测试一下" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">第一个博客  测试一下</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C语言文件操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/10/26/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2023-10-26T05:13:21.584Z" itemprop="datePublished">2023-10-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言文件操作"><a href="#C语言文件操作" class="headerlink" title="C语言文件操作"></a>C语言文件操作</h1><h2 id="文件的概念"><a href="#文件的概念" class="headerlink" title="文件的概念"></a>文件的概念</h2><p>先简单介绍一下文件的概念：操作系统是以文件为单位对数据进行管理的，文件一般存储在外部介质上（如磁盘磁带）</p>
+<blockquote>
+<p>所以文件可以长期保存所属程序的数据<br>简单应用：数据的读取、游戏的读存档</p>
+</blockquote>
+<h3 id="文件名"><a href="#文件名" class="headerlink" title="文件名"></a>文件名</h3><p>文件名为了方便用户识别和应用，包括了3各部分：</p>
+<ul>
+<li>文件路径（文件路径）</li>
+<li>文件名主干（用户所取用的名字）</li>
+<li>文件后缀（文件类型）</li>
+</ul>
+<blockquote>
+<p>我们一般取文件名的时候，取的是文件名主干。文件后缀、文件路径会根据你存储的位置和类型生成。</p>
+</blockquote>
+<h3 id="文件的分类"><a href="#文件的分类" class="headerlink" title="文件的分类"></a>文件的分类</h3><p>根据文件所存储内容不不同，我们可以把文件分为两类：ASCII文件和二进制文件：</p>
+<ul>
+<li>ASCII文件(文本文件)：每一个字节放一个ASCII代码</li>
+<li>二进制文件：把内存中的数据按照其在内存中的存储形式原样输出到磁盘上存放</li>
+</ul>
+<blockquote>
+<p>C语言把文件看作是一个字节的序列，即文件由一个一个字节数据组成。<br>进行读写操作时，也是以一个字节为单位进行的。</p>
+</blockquote>
+<p><strong>文本文件：</strong></p>
+<p>文本文件中数据是以字符形式呈现的，每个字符占用一个字节。在进行读写操作时时，计算机会花时间对数据进行一个翻译操作。</p>
+<p>如：存储文件时，计算机会将每个字符的ASCII码转换成二进制形式进行存储。<br>         识别文件时，计算机以字节（8 bit）为单位读出二进制数据，通过ASCII码转化为最终我们可以看得懂的数据。</p>
+<p><strong>二进制文件：</strong></p>
+<p>二进制文件在存储数据时是直接以二进制的方式进行的，不需要进行转换，因此不仅可以提高执行效率，还能节省存储空间。</p>
+<p>但二进制文件的一个字节并不对应一个字符。这就导致读这个文件出来的数据，用户是看不懂的。</p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h3><p>学习文件操作之前，我们必须要了解什么是文件指针。顾名思义，文件指针就是一个指向文件的指针。</p>
+<p>C语言内置的文件指针类型 <code>FILE*</code></p>
+<p>用<code>FILE*</code>定义一个变量来指向一个文件所存储的地址，即可对它进行各种操作。</p>
+<h3 id="文件位置指针"><a href="#文件位置指针" class="headerlink" title="文件位置指针"></a>文件位置指针</h3><p>文件内部指针不需要你在程序中定义和赋值，它是由系统自动设置，对用户是隐藏的。</p>
+<p>它就是我们所见的光标，表示文件内读写数据的位置。</p>
+<p>一般情况下，在对字符文件进行读写时，文件的位置指针指向文件开头，这时如果对文件进行读的操作，就读第一个字符，然后文件的位置指针顺序向后移一个位置，在下一次执行读的操作时，就将指针指向的第二个字符读入。 依此类推，直到遇文件尾。</p>
+<p>有时，需要在数据中间进行增删操作，我们就可以通过移动位置指针的位置，来设定下一步操作的位置。</p>
+<h3 id="文件的打开与关闭"><a href="#文件的打开与关闭" class="headerlink" title="文件的打开与关闭"></a>文件的打开与关闭</h3><h4 id="打开文件的函数："><a href="#打开文件的函数：" class="headerlink" title="打开文件的函数："></a><strong>打开文件的函数：</strong></h4><p><code> FILE*  fopen(char const* _FileName,char const* _Mode);</code></p>
+<ul>
+<li>FILE*：表示的是该函数返回被打开文件的地址。</li>
+<li><strong>fopen</strong>函数名</li>
+<li>函数参数：文件名（_FileName_）和文件打开模式（_Mode_）</li>
+</ul>
+<p>接下来重点讲一下文件打开模式：</p>
+<p><strong>文件的打开模式</strong></p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>含义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读</td>
+<td>文件必须存在，否则打开失败</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写</td>
+<td>若文件存在，则清除原文件内容后写入；否则，创建文件后写入</td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加只写</td>
+<td>若文件存在，则位置指针移到文件末尾，在文件尾部追加写入，故该方式不删除原文件数据；若文件不存在，则打开失败</td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读写</td>
+<td>文件必须存在。在只读 r 的基础上加 ‘+’ 表示增加可写的功能。</td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读写</td>
+<td>在只写 w 的基础上加 ‘+’ 表示增加可读的功能</td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读写</td>
+<td>在”a”模式的基础上，增加可读功能</td>
+</tr>
+<tr>
+<td>rb</td>
+<td>二进制读</td>
+<td>功能同模式”r”，区别：b表示以二进制模式打开。下同</td>
+</tr>
+<tr>
+<td>wb</td>
+<td>二进制写</td>
+<td>功能同模式“w”。二进制模式</td>
+</tr>
+<tr>
+<td>ab</td>
+<td>二进制追加</td>
+<td>功能同模式”a”。二进制模式</td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>二进制读写</td>
+<td>功能同模式”r+”。二进制模式</td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>二进制读写</td>
+<td>功能同模式”w+”。二进制模式</td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>二进制读写</td>
+<td>功能同模式”a+”。二进制模式</td>
+</tr>
+</tbody></table>
+<p>关于<strong>文件名</strong>的制定：</p>
+<p>文件名不能包含下列字符：<br><code>\ / : * ? &quot; &lt; &gt; |</code></p>
+<p>文件名需要加上属性如：<br><code>text.txt</code><br><code>E:/text.txt</code></p>
+<p>文件的存放有两种方式：<br>1.相对路径，如（<code>text.txt</code>），文件默认存放在与程序源文件同一根目录下<br>2.绝对路径，如（<code>E:/text.txt</code>），存放在，所规定的路径下</p>
+<blockquote>
+<p>注意：有些时候设定文件存放在C盘下某些目录中，会导致操作失败。这是因权限不够。只需要重新以管理员身份运行程序即可（如C盘的windows目录）</p>
+</blockquote>
+<h4 id="文件的关闭"><a href="#文件的关闭" class="headerlink" title="文件的关闭"></a>文件的关闭</h4><p><code>int  fclose(FILE* _Stream);</code><br><code>fclose()</code> 函数的作用是将输入&#x2F;输出流缓冲区中尚未写入磁盘的数据刷新到磁盘上，并释放文件指针所占用的内存。它接受一个文件指针作为参数，并返回一个整数值，表示操作是否成功（0 表示成功，EOF 表示失败）。</p>
+<p>在文件使用完之后，记得对用<code>fclose()</code> 对文件进行关闭。(这很重要！！！)&gt;</p>
+<blockquote>
+<p>关于EOF。</p>
+<p>EOF在C语言中是一个特殊标记。代表着“End of File”，即文件结束的标志。<br>EOF被定义为一个整数常量，值为-1。</p>
+</blockquote>
+<h3 id="文件的读写"><a href="#文件的读写" class="headerlink" title="文件的读写"></a>文件的读写</h3><h4 id="字符形式读写"><a href="#字符形式读写" class="headerlink" title="字符形式读写"></a>字符形式读写</h4><p>以字符形式读写文件时，每次从文件中读出一个字符，或者写入一个字符。</p>
+<p><strong>读取函数：fgetc()</strong>   <code>int  fgetc(FILE* _Stream);</code></p>
+<ul>
+<li>读取成功返回读到的字符</li>
+<li>读取失败或读到最后返回<code>EOF</code> (EOF是文件结尾的标志)</li>
+</ul>
+<blockquote>
+<p>EOF 本来表示文件末尾，意味着读取结束，但是很多函数在读取出错时也返回 EOF，那么当返回 EOF 时，到底是文件读取完毕了还是读取出错了？我们可以借助 stdio.h 中的两个函数来判断，分别是 feof() 和 ferror()。</p>
+</blockquote>
+<p><code>feof()</code> 函数用来判断文件内部指针是否指向了文件末尾，当指向文件末尾时返回非零值，否则返回零值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">feof</span><span class="params">(FILE* _Stream)</span>;</span><br></pre></td></tr></table></figure>
+
+<p><code>ferror()</code> 函数用来判断文件操作是否出错，出错时返回非零值，否则返回零值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">ferror</span> <span class="params">( FILE *fp )</span>;</span><br></pre></td></tr></table></figure>
+
+<p>**写入函数：fputc() ** <code>int  fputc(int   ch, FILE* _Stream);</code></p>
+<ul>
+<li>写入成功返回这个字符</li>
+<li>写入失败返回EOF</li>
+</ul>
+<h4 id="字符串形式读写"><a href="#字符串形式读写" class="headerlink" title="字符串形式读写"></a>字符串形式读写</h4><p>读取字符串函数：<code>fgets()</code> 函数用来从指定的文件中读取字符串，并保存到字符数组中<br><code>char* fgets(char* _Buffer,int  _MaxCount,FILE* _Stream);</code></p>
+<ul>
+<li>参数：buffer-字符数组；maxcount-为要读取的字符数量；srteam-文件指针</li>
+<li>返回值。成功返回字符数组首地址，也就是buffer；失败返回NULL。</li>
+<li>不管_MaxCount个数据有没有读完，fgets() 最多只能读取一行数据，不能跨行。在C语言中，没有按行读取文件的函数。</li>
+</ul>
+<blockquote>
+<p>注意fgets（）每次最多从文件中读取一行的内容。因为fgets()遇见换行符就表示结束读取。</p>
+</blockquote>
+<p>写入字符串函数：<code>fputs()</code>函数用来向指定的文件写入一个字符串。<br><code>int fputs(char const* _Buffer,FILE*  _Stream);</code></p>
+<ul>
+<li>成功返回什么，失败返回什么</li>
+</ul>
+<h4 id="格式化读写"><a href="#格式化读写" class="headerlink" title="格式化读写"></a>格式化读写</h4><p>**<code>fscanf()</code><strong>和</strong><code>fprintf()</code>**非常类似于scanf()和printf(),不同的是它们的输入输出目标是一个文件。需要注意格式字符串要匹配传入的数据类型,否则可能导致不可预料的错误。</p>
+<p><code>int fscanf(FILE *_Stream,char * format, ... );</code><br><code>int fprintf(FILE *_Stream,char * format, ... );</code></p>
+<h4 id="二进制读写"><a href="#二进制读写" class="headerlink" title="二进制读写"></a>二进制读写</h4><p><strong>fread()<strong>和</strong>fwrite()</strong>  二进制读和二进制写。用来读取或写入文件的块数据。<br>         所谓块数据，也就是若干个字节的数据，可以是一个字符，可以是一个字符串，可以是多行数据，并没有什么限制。<br>        可用其将文件中的数据全部读出。</p>
+<p><code>size_t fread(void*  Buffer,size_t ElementSize,size_t ElementCount,FILE*  Stream);</code></p>
+<p><code>size_t  fwrite(void const* Buffer,size_t ElementSize,size_t ElementCount,FILE* Stream);</code></p>
+<blockquote>
+<p><code>size_t</code> 是一个用来表示内存大小的无符号整数类型，它可以用来表示内存块的字节数或元素个数。</p>
+</blockquote>
+<p>对参数的说明：</p>
+<ul>
+<li>Buffer为内存区块的指针，它可以是数组、变量、结构体等。fread() 中的 Buffer用来存放读取到的数据，fwrite() 中的 Buffer用来存放要写入的数据。</li>
+<li>ElementSize：表示每个数据块的字节数。</li>
+<li>ElementCount：表示要读写的数据块的块数。</li>
+<li>Stream：表示文件指针。</li>
+</ul>
+<p>返回值，成功返回读写的字节数即count。当如果返回值小于count。</p>
+<ul>
+<li>对于 fwrite() 来说，可以用 ferror() 函数检测发生的错误。</li>
+<li>对于 fread() 来说，可以用 ferror() 或 feof() 检测检测发生的错误。</li>
+</ul>
+<h4 id="关于feof-和ferror"><a href="#关于feof-和ferror" class="headerlink" title="关于feof()和ferror()"></a>关于feof()和ferror()</h4><p><code>feof()</code> 和<code>ferror()</code>都是基于标准库中的 <code>FILE</code> 结构来工作的。</p>
+<p><code>feof（）</code>函数用于检测文件流是否已经达到了文件结束的条件。<br>用法：通常在循环读取文件时，可以使用 <code>feof()</code> 函数检查文件是否已经结束。如果函数返回非零值，则表示文件已结束；如果返回零值，则表示文件还没有结束。可以根据这个返回值决定是否继续读取文件内容。</p>
+<p><code>ferror()</code>函数用于检测文件流的错误状态。当文件流在操作过程中发生错误时，这个标志位就会被设置。<br>用法：通常在对文件进行读写操作后，可以使用 <code>ferror()</code> 函数检查是否发生了错误。如果函数返回非零值，则表示发生了错误；如果返回零值，则表示没有发生错误。出现错误后，可以使用 <code>perror()</code> 函数或其他适当的错误处理手段来处理错误。</p>
+<blockquote>
+<p>需要注意的是，<code>ferror()</code> 和 <code>feof()</code> 函数都是对文件流进行判断，因此在使用这两个函数之前，需要确保已经打开了要操作的文件流。另外，它们的返回值类型都是 <code>int</code>，非零值表示条件满足，零值表示条件不满足。</p>
+</blockquote>
+<h4 id="随机读写"><a href="#随机读写" class="headerlink" title="随机读写"></a>随机读写</h4><p>前面讲的都是顺序读写，但在实际操作中，我们常常需要从中间进行读写。这就需要用到文件定位函数，其实，随机读写的本质就是改变文件指针（光标）的位置。</p>
+<p><strong>文件定位函数rewind()和fseek()</strong></p>
+<p><strong>rewind()</strong> 用来将位置指针移动到文件开头:<br><code>void rewind ( FILE *Stream );</code></p>
+<p>**fseek() **用来将位置指针移动到任意位置:<br><code>int fseek ( FILE *Stream, long offset, int origin );</code></p>
+<ul>
+<li>Stream为文件指针，也就是被移动的文件。</li>
+<li>offset 为偏移量，也就是要移动的字节数。offset 为正时，向后移动；offset 为负时，向前移动。</li>
+<li>origin 为起始位置，也就是从何处开始计算偏移量。C语言规定的起始位置有三种，分别为文件开头、当前位置和文件末尾，每个位置都用对应的常量来表示：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>起始点</th>
+<th>常量名</th>
+<th>常量值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文件开头</td>
+<td>SEEK_SET</td>
+<td>0</td>
+</tr>
+<tr>
+<td>当前位置</td>
+<td>SEEK_CUR</td>
+<td>1</td>
+</tr>
+<tr>
+<td>文件末尾</td>
+<td>SEEK_END</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<h3 id="其它文件操作"><a href="#其它文件操作" class="headerlink" title="其它文件操作"></a>其它文件操作</h3><p>**ftell():**用于得到当前文件指针的位置与首位置地偏移量。<br><code>long  ftell(FILE* Stream);</code></p>
+<p><strong>remove()：</strong> 用于删除指定的文件，如果文件被成功删除，则返回零值。<br><code>int  remove(char const* FileName);</code></p>
+<p><strong>rename</strong> 用于重名&#x2F;移动文件，成功返回0，失败返回非零<br><code>int rename(char const* OldFileName,char const* NewFileName);</code></p>
+<ul>
+<li>将oldname 指定的文件或目录的名称更改为<em>newname</em>。</li>
+<li>如果<em>oldname</em>和<em>newname</em>指定不同的路径并且系统支持，则文件将移动到新位置。</li>
+<li>如果<em>newname</em>命名现有文件，则该函数可能会失败或覆盖现有文件，具体取决于特定的系统和库实现</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/10/26/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" data-id="clo6qc91m0000dswac3xb6u1d" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/10/26/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/10/26/C%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/26/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/26/%E4%BB%8Ec%E5%88%B0c++/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/10/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
